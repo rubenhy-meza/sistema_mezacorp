@@ -1,0 +1,23 @@
+ .data_movI{
+    color:rgb(8, 172, 8);
+    font-size: 150%;
+}
+.data_movS{
+    color:rgb(252, 4, 4);
+    font-size: 150%;
+}
+.modal-forms.modal-header {
+    border-top-right-radius: 15px !important;
+    border-top-left-radius: 15px !important;
+    background-image: linear-gradient( 105.3deg,  rgb(51, 142, 255 ) 62.2%, rgb(101, 51, 255 ) 62.2% ) !important;
+}
+.error-message{display: none;}
+input:not(:focus):invalid ~ .error-message{
+    display: block;
+}
+input:not(:focus):invalid{
+    border-color: brown;
+}
+.btn-group, .btn-group-vertical{
+    position: absolute !important;
+}
