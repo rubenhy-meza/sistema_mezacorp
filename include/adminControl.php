@@ -79,16 +79,15 @@
     <a id="btn_rrhh" class="nav-link collapsed" href="rRRHH.php" data-toggle="collapse" data-target="#collapsePages"
         aria-expanded="true" aria-controls="collapsePages">
         <i class="fas fa-fw fa-home"></i>
-        <span>componetes</span>
+        <span>Reportes</span>
     </a>
     <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header"> EMPLEADO:</h6>
-            <a class="collapse-item" href="login.html">Agregar</a>
+            
+            <a class="collapse-item" href="reportviews.php">Reportes Caja</a>
             <a class="collapse-item" href="register.html">Editar</a>
             <a class="collapse-item" href="forgot-password.html">Calcular sueldo</a>
-            <div class="collapse-divider"></div>
-            <h6 class="collapse-header">Impresiones:</h6>
+            
             <a class="collapse-item" href="404.html">Imprimir boleta</a>
             <a class="collapse-item" href="blank.html">Liquidar</a>
         </div>

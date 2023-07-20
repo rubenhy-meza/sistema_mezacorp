@@ -35,31 +35,33 @@ if(isset($_SESSION['message'])){
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
-                    <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Saldos en Cuentas</h1>
-                        <a href="reportviews.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" ><i
-                                class="fas fa-download fa-sm text-white-50" id="btn_report"></i> Generar Reporte</a>
-                    </div>
-
                     <!-- Content Row -->
-                    <div class="row">
-
+                   
+                     <button class="unstyled-button m-0 font-weight-bold text-primary p-2"  id="example-one" 
+                       data-text-swap="+ Ver saldos" data-text-original="- Ocultar saldos">+ Ver saldos</button>
+                        <script>
+                            $("#example-one").on("click", function() {
+                              var el = $(this);
+                              $('#versal').css('display','block');  
+                             
+                             el.text() == el.data("text-swap")  ? el.text(el.data("text-original") ): el.text(el.data("text-swap"));
+                             if( el.text() ==  el.data("text-swap") )
+                             {$('#versal').css('display','none');}  
+                           });
+                        </script>
+                     <div id="versal"  style="display:none;" >  
+                     <div class="row" >
                         <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="col-xl-3 col-md-6 mb-3 " >
                             <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
+                                <div class="card-body p-2" >
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                              CUENTA MEZACORP</div><small>
-
-                                               <div class="h6 mb-0 font-weight-bold text-gray-800" > <small>Disponible  Soles BCP: </small> <span id='bcp_m_s'></span></div>
-                                               <div class="h6 mb-0 font-weight-bold text-gray-800" > <small>Disponible  Soles BBVA: </small> <span id='bbva_m_s'></span></div>
-                                                <div class="h6 mb-0 font-weight-bold text-gray-800" ><small>Disponible   Dolares BCP: </small> <span id='bcp_m_d'></span></div>
-                                   
-                                        </div></small>
+                                               <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> CUENTA MEZACORP</div>
+                                               <div class="h6 mb-0  text-gray-800 small" > Disponible  Soles BCP:  <span class="font-weight-bold"  id='bcp_m_s'></span></div>
+                                               <div class="h6 mb-0  text-gray-800 small" > Disponible  Soles BBVA:  <span class="font-weight-bold"   id='bbva_m_s'></span></div>
+                                                <div class="h6 mb-0  text-gray-800 small" >Disponible   Dolares BCP:  <span class="font-weight-bold"  id='bcp_m_d'></span></div>
+                                       </div>
                                         <div class="col-auto">
                                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
                                         </div>
@@ -69,15 +71,16 @@ if(isset($_SESSION['message'])){
                         </div>
 
                         <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="col-xl-3 col-md-6 mb-3">
                             <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
+                                <div class="card-body p-2">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                             CUENTA OMA</div>
-                                            <div class="h6 mb-0 font-weight-bold text-gray-800" ><small>Disponible  Soles: </small> <span id='bcp_o_s'></span></div>
-                                            <div class="h6 mb-0 font-weight-bold text-gray-800" ><small>Disponible  Dolares: </small><span id='bcp_o_d'></span> </div>
+                                            <div class="h6 mb-0  text-gray-800 small" >Disponible  Soles: <span class="font-weight-bold" id='bcp_o_s'></span></div>
+                                            <div class="h6 mb-0  text-gray-800 small" >Disponible  Dolares: <span class="font-weight-bold" id='bcp_o_d'></span> </div>
+                                            
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -88,9 +91,9 @@ if(isset($_SESSION['message'])){
                         </div>
 
                         <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="col-xl-3 col-md-6 mb-3">
                             <div class="card border-left-info shadow h-100 py-2">
-                                <div class="card-body">
+                                <div class="card-body p-2">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">CUENTA VICTOR MEZA
@@ -100,8 +103,8 @@ if(isset($_SESSION['message'])){
                                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"></div>
                                                 </div>
                                                 <div class="col">
-                                                <div class="h6 mb-0 font-weight-bold text-gray-800" ><small>Disponible BCP  Soles: </small> <span id='bcp_v_s'></span> </div>
-                                                <div class="h6 mb-0 font-weight-bold text-gray-800" ><small>Disponible BBVA Soles: </small> <span id='bbva_v_s'></span></div>                                      
+                                                <div class="h6 mb-0 small text-gray-800" >Disponible BCP  Soles: <span class="font-weight-bold" id='bcp_v_s'></span> </div>
+                                                <div class="h6 mb-0 small text-gray-800" >Disponible BBVA Soles:  <span class="font-weight-bold" id='bbva_v_s'></span></div>                                      
                                                 </div>
                                             </div>
                                         </div>
@@ -114,22 +117,19 @@ if(isset($_SESSION['message'])){
                         </div>
 
                         <!-- Pending Requests Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="col-xl-3 col-md-6 mb-3">
                             <div class="card border-left-warning shadow h-100 py-2">
-                                <div class="card-body">
+                                <div class="card-body p-2">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                            CUENTA CAJA CHICA</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                            <div class="h6 mb-0 font-weight-bold text-gray-800" ><small>Disponible  Soles: </small><span id='caja_s'></span> </div>
+                                              CUENTA CAJA CHICA</div>
                                             
-                                            <div class="h6 mb-0 font-weight-bold text-gray-800" ><small>Disponible  Dolares: </small><span id='caja_d'></span> </div>                                      
+                                             <div class="h6 mb-0 small text-gray-800" >Disponible  Soles: <span class="font-weight-bold" id='caja_s'></span> </div>
+                                             <div class="h6 mb-0 small text-gray-800" >Disponible  Dolares: <span class="font-weight-bold" id='caja_d'></span> </div>                                      
+                                             <div class="h6 mb-0 small text-gray-800" >Disponible Total : <span class="font-weight-bold" id='cta_total'></span> </div>                                      
                                              
                                             
-                                            <div class="h6 mb-0 font-weight-bold text-gray-800" ><small>Disponible Total : </small><span id='cta_total'></span> </div>                                      
-                                             
-                                            </div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -138,25 +138,19 @@ if(isset($_SESSION['message'])){
                                 </div>
                             </div>
                         </div>
-                    </div>
+                     </div>
+                     </div>
+                      <!-- Content Row -->
 
-                    <!-- Content Row -->
-
-                    <div class="row">
+                     <div class="row">
 
                         <!-- Area Chart -->
                         <div class="col-xl-8 col-lg-7">
-                            <div class="card shadow mb-4">
+                            <div class="card shadow mb-2 ">
                                 <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">LISTA DE MOVIMIENTOS</h6>
-
-                                    <!--ellipsis-v
-                                     <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
-                                     data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                     class="fas fa-plus fa-sm text-white-50"></i> Movimiento</a>
- -->
-                                    <div class="dropdown no-arrow">
+                                <div class="card-header py-2 d-flex flex-row align-items-center justify-content-between  ">
+                                    <h6 class="m-0 font-weight-bold text-primary ">Lista Movimientos</h6>
+                                    <div class="dropdown no-arrow ">
                                        <a class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal_search"> 
                                        <i class="fas fa-search fa-sm fa-fw text-blue-400"></i>
                                        </a>
@@ -165,7 +159,7 @@ if(isset($_SESSION['message'])){
                                 <!-- Card Body -->
                                 <div class="card-body">
                             <div class="table-responsive">
-                                <small>
+                                <small style="font-size: 12px;">
                                 <table class="table table-bordered hover" id="DataTable_mov"   width="100%" cellspacing="0" >
                                     <thead >
                                         <tr> 
@@ -177,16 +171,7 @@ if(isset($_SESSION['message'])){
                                             <th>Accion</th>                                        
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr >  
-                                           <th>#</th>
-                                           <th>Detalle de Operacion</th>
-                                            <th>Cuenta</th>
-                                            <th>Fecha Reg</th>
-                                            <th>Monto</th>                               
-                                            <th>Accion</th>                                        
-                                        </tr>
-                                    </tfoot>
+                                   
                                     <tbody>   
                                     </tbody>
                                 </table></small>
@@ -201,27 +186,13 @@ if(isset($_SESSION['message'])){
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Reguistar Movimiento</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
+                                    class="card-header py-2 d-flex flex-row align-items-center justify-content-between ">
+                                    <h6 class="m-0 font-weight-bold text-primary">Reguistar Movimiento</h6>      
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                <div class="modal-body">
-         <form  method="POST" id="form_create_mov" onsubmit="event.preventDefault();crear_movimiento();">  
+                                 <div class="modal-body">
+                                   <form  method="POST" id="form_create_mov" onsubmit="event.preventDefault();crear_movimiento();">  
             <div class="row">
                 <DIV id="MSG"></DIV>
                 <DIV id="MSG1"></DIV>
@@ -313,7 +284,8 @@ if(isset($_SESSION['message'])){
               </div>
            </div>
            <div class="mb-3">
-           <div class="mb-3"> <div class="row">
+           <div class="mb-3">
+             <div class="row small">
             <div class="col-md-4">
                         <div class="form-check">
                              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="Deposito op:" >
@@ -348,10 +320,11 @@ if(isset($_SESSION['message'])){
           </div>
           
           
-          <div class="modal-footer">
-          
-        <input type="submit" class='btn btn-success btn-' name='btn_addmov' value='Guardar'>
-        </div>
+         
+             <div class="d-grid gap-2 ">
+               <button type="submit" class='btn btn-success ' name='btn_addmov' value='Guardar'><i class="fa-regular fa-floppy-disk"></i> Guardar</button>
+             </div>
+        
           </form>
           <?php
               if(isset($_SESSION['success'])){
